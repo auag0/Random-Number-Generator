@@ -11,8 +11,8 @@ android {
         applicationId = "com.anago.randomnumber"
         minSdk = 23
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0.0"
+        versionCode = 1_00_10
+        versionName = "1.0.1"
         ndk {
             abiFilters.add("arm64-v8a")
             abiFilters.add("armeabi-v7a")
