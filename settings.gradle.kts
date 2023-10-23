@@ -17,3 +17,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Random Number"
 include(":app")
+include(":Bomb")

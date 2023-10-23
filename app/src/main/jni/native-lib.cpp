@@ -1,15 +1,12 @@
 #include <jni.h>
 #include <random>
+#include <unistd.h>
 #include "includes/Logger.h"
 
-int generateRandomNumber() {
+jint getRandomNumber(JNIEnv *env, jclass clazz) {
     std::random_device generator;
     int randomNumber = static_cast<int>(generator());
     return abs(randomNumber);
-}
-
-jint getRandomNumber(JNIEnv *env, jclass clazz) {
-    return generateRandomNumber();
 }
 
 JNIEXPORT jint JNI_OnLoad(JavaVM *vm, void *reserved) {
@@ -46,4 +43,5 @@ JNIEXPORT jint JNI_OnLoad(JavaVM *vm, void *reserved) {
 __attribute__((constructor))
 void constructor() {
     LOGD("constructor");
+    LOGD("PID: %d", getpid());
 }
