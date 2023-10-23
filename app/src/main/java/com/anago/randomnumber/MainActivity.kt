@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val countText: TextView = findViewById(R.id.text_count)
+        val randomNumberText: TextView = findViewById(R.id.text_random_number)
         val generateBtn: Button = findViewById(R.id.btn_generate)
 
         generateBtn.setOnClickListener {
@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         viewModel.randomNumber.observe(this) {
-            countText.text = "$it"
+            randomNumberText.text = "$it"
         }
     }
 }

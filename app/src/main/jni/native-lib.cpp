@@ -2,10 +2,14 @@
 #include <random>
 #include "includes/Logger.h"
 
-jint getRandomNumber(JNIEnv *env, jclass clazz) {
+int generateRandomNumber() {
     std::random_device generator;
-    int randomNum = static_cast<int>(generator());
-    return abs(randomNum);
+    int randomNumber = static_cast<int>(generator());
+    return abs(randomNumber);
+}
+
+jint getRandomNumber(JNIEnv *env, jclass clazz) {
+    return generateRandomNumber();
 }
 
 JNIEXPORT jint JNI_OnLoad(JavaVM *vm, void *reserved) {
